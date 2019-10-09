@@ -20,7 +20,7 @@ one.addEventListener('click', (prevent) => {
     off.disabled = false;
     Status.innerHTML = "1";
 
-    client.publish('princess/device/status', 'FAN TURNED 1 at ' + date + " "  + time, (err) => {
+    client.publish('princess/fan/status', 'FAN TURNED 1 at ' + date + " "  + time, (err) => {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
@@ -33,7 +33,7 @@ two.addEventListener('click', (prevent) => {
     off.disabled = false;
     Status.innerHTML = "2";
 
-    client.publish('princess/device/status', 'FAN TURNED 2 at ' + date + " "  + time, (err) => {
+    client.publish('princess/fan/status', 'FAN TURNED 2 at ' + date + " "  + time, (err) => {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
@@ -46,7 +46,7 @@ three.addEventListener('click', (prevent) => {
     off.disabled = false;
     Status.innerHTML = "3";
 
-    client.publish('princess/device/status', 'FAN TURNED 3 at ' + date + " "  + time, (err) => {
+    client.publish('princess/fan/status', 'FAN TURNED 3 at ' + date + " "  + time, (err) => {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
@@ -57,7 +57,7 @@ off.addEventListener('click', () => {
 
     Status.innerHTML = "Off";
 
-    client.publish('princess/device/status', 'FAN TURNED OFF at ' + date + " "  + time, function (err) {
+    client.publish('princess/fan/status', 'FAN TURNED OFF at ' + date + " "  + time, function (err) {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
