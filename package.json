@@ -1,0 +1,19 @@
+{
+  "name": "princess-pn2k19.github.io",
+  "version": "1.0.0",
+  "description": "IoT Fan Switch with MQTT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Princess-PN2k19/Princess-PN2k19.github.io.git"
+  },
+  "author": "Princess Joy C. Duran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Princess-PN2k19/Princess-PN2k19.github.io/issues"
+  },
+  "homepage": "https://github.com/Princess-PN2k19/Princess-PN2k19.github.io#readme"
+}
