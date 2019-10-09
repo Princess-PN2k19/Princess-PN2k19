@@ -11,14 +11,14 @@ client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
 
 client.on("connect", () => {
     off.disabled = true;
-    Status.innerHTML = "The fan is currently turned Off";
+    Status.innerHTML = "Off";
 });
 
 one.addEventListener('click', (prevent) => {
     prevent.preventDefault();
 
     off.disabled = false;
-    Status.innerHTML = "The fan is currently turned 1";
+    Status.innerHTML = "1";
 
     client.publish('princess/device/status', 'FAN TURNED 1 at ' + date + " "  + time, (err) => {
         if (err) {
@@ -31,7 +31,7 @@ two.addEventListener('click', (prevent) => {
     prevent.preventDefault();
 
     off.disabled = false;
-    Status.innerHTML = "The fan is currently turned 2";
+    Status.innerHTML = "2";
 
     client.publish('princess/device/status', 'FAN TURNED 2 at ' + date + " "  + time, (err) => {
         if (err) {
@@ -44,7 +44,7 @@ three.addEventListener('click', (prevent) => {
     prevent.preventDefault();
 
     off.disabled = false;
-    Status.innerHTML = "The fan is currently turned 3";
+    Status.innerHTML = "3";
 
     client.publish('princess/device/status', 'FAN TURNED 3 at ' + date + " "  + time, (err) => {
         if (err) {
@@ -55,7 +55,7 @@ three.addEventListener('click', (prevent) => {
 
 off.addEventListener('click', () => {
 
-    Status.innerHTML = "The fan is currently turned Off";
+    Status.innerHTML = "Off";
 
     client.publish('princess/device/status', 'FAN TURNED OFF at ' + date + " "  + time, function (err) {
         if (err) {
