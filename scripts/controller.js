@@ -3,9 +3,6 @@ var two = document.getElementById("two");
 var three = document.getElementById("three");
 var off = document.getElementById("off");
 var Status = document.getElementById("stat");
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
 
@@ -19,8 +16,12 @@ one.addEventListener('click', (prevent) => {
 
     off.disabled = false;
     Status.innerHTML = "1";
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    client.publish('princess/fan/status', 'FAN TURNED 1 at ' + date + " "  + time, (err) => {
+
+    client.publish('princess/fan/status', 'FAN TURNED 1 at ' + date + " " + time, (err) => {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
@@ -32,8 +33,12 @@ two.addEventListener('click', (prevent) => {
 
     off.disabled = false;
     Status.innerHTML = "2";
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    client.publish('princess/fan/status', 'FAN TURNED 2 at ' + date + " "  + time, (err) => {
+
+    client.publish('princess/fan/status', 'FAN TURNED 2 at ' + date + " " + time, (err) => {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
@@ -45,8 +50,12 @@ three.addEventListener('click', (prevent) => {
 
     off.disabled = false;
     Status.innerHTML = "3";
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    client.publish('princess/fan/status', 'FAN TURNED 3 at ' + date + " "  + time, (err) => {
+
+    client.publish('princess/fan/status', 'FAN TURNED 3 at ' + date + " " + time, (err) => {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
@@ -56,8 +65,12 @@ three.addEventListener('click', (prevent) => {
 off.addEventListener('click', () => {
 
     Status.innerHTML = "Off";
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    client.publish('princess/fan/status', 'FAN TURNED OFF at ' + date + " "  + time, function (err) {
+
+    client.publish('princess/fan/status', 'FAN TURNED OFF at ' + date + " " + time, function (err) {
         if (err) {
             alert("Oopps! Failed to connect!")
         }
